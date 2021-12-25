@@ -14,3 +14,21 @@ Put the kind to a path which is included in the $PATH, e.g.,
 	export PATH=~/bin:$PATH
 
 
+Similiarly, install kubectl and cilium using the same way.
+
+### Deploy the test environment
+
+Follow the instructions:
+
+First, build a test cluster:
+
+	kind create cluster --config kind-config.yaml
+
+
+Second, prepare necessary components for tests (cilium, apps, ...):
+
+	./env.sh
+
+If the above script fails, please check each pod and see what's happening (in most case, it's because of network issues).
+
+
